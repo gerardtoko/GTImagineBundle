@@ -232,7 +232,7 @@ class may be used directly.
 
 
 ## Using the controller as a service
-If you need to use the filters in a controller, you can just load service `gt_imagine`
+If you need to use the filters in a controller, you can just load `gt_imagine` service
 
 ``` php
 class MyController extends Controller
