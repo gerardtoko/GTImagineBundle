@@ -251,3 +251,16 @@ class MyController extends Controller
     }
 }
 ```
+
+## Using the commands
+If you need to use the filters in the console, you can just execute
+
+```
+  gt:imagine:dump:all                      Apply a filter on all images
+  gt:imagine:dump:filter                   Apply a filter on images group
+  gt:imagine:dump:image                    Apply a filter on an image
+  gt:imagine:remove:all                    remove all images filtered
+  gt:imagine:remove:filter                 remove a images group filtered
+  gt:imagine:remove:image                  remove an image filtered
+
+```
