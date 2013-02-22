@@ -1,5 +1,5 @@
 {
-    "name": "gt/imagine-bundle",
+    "name": "gerardtoko/imagine-bundle",
     "type": "symfony-bundle",
     "description": "This Bundle assists in imagine manipulation using the imagine library",
     "keywords": ["imagine", "image"],
