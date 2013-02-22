@@ -196,7 +196,7 @@ Consider the following configuration example, which defines two filters to alter
 an image to an exact screen resolution:
 
 ``` yaml
-avalanche_imagine:
+gt_imagine:
     filters:
         cga:
             resize: { size: [320, 200] }
@@ -214,7 +214,7 @@ Given an input image sized 50x40 (width, height), consider the following
 annotated configuration examples:
 
 ``` yaml
-avalanche_imagine:
+gt_imagine:
     filters:
         heighten:
             relative_resize: { heighten: 60 } # Transforms 50x40 to 75x60
@@ -232,8 +232,7 @@ class may be used directly.
 
 
 ## Using the controller as a service
-
-If you need to use the filters in a controller, you can just load `ImagineController.php` controller as a service and handle the response:
+If you need to use the filters in a controller, you can just load service `gt_imagine`
 
 ``` php
 class MyController extends Controller
@@ -244,6 +243,7 @@ class MyController extends Controller
         $srcPath = $imagine->filter("image.jpg", "my_thumb");
         
         //filter All
+        $imagine->removeAll("my_thumb");
         $imagine->filterAll("my_thumb");
         
         // ..
