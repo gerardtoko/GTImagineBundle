@@ -139,8 +139,7 @@ In order to get an absolute path to the image add another parameter with the val
 
 ## Filters
 
-The LiipImagineBundle provides a set of built-in filters.
-You may easily roll your own filter, see [the filters chapter in the documentation](Resources/doc/filters.md).
+The GTImagineBundle provides a set of built-in filters.
 
 
 There are several configuration options available:
