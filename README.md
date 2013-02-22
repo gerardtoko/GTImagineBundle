@@ -78,14 +78,14 @@ gt_imagine:
     web_root:   %web_root%
     data_root:  %web_media%/thumbnails
     filter_sets:
-        media_image:
-            directory:  %web_media%/images
+        cover:
+            directory:  %web_media%/images/cover
             quality:    75
             filters:
                 thumbnail:  { size: [140, 200], mode: outbound }
                 crop:       { start: [0, 0], size: [140, 200] }
-        profile_image:
-            directory:  %web_media%/images
+        profile:
+            directory:  %web_media%/images/profile
             quality:    75
             filters:
                 thumbnail:  { size: [50, 50], mode: outbound }
