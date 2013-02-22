@@ -262,5 +262,4 @@ If you need to use the filters in the console, you can just execute
   gt:imagine:remove:all                    remove all images filtered
   gt:imagine:remove:filter                 remove a images group filtered
   gt:imagine:remove:image                  remove an image filtered
-
 ```
