@@ -134,7 +134,6 @@ In this example, the final rendered path would be something like
 `/media/my_thumb/relative/path/to/image.jpg`. This is where Imagine
 would save the filtered image file.
 
-In order to get an absolute path to the image add another parameter with the value true:
 
 
 ## Filters
@@ -231,7 +230,7 @@ class may be used directly.
 
 
 
-## Using the controller as a service
+## Using GTImagineBundle in a controller
 If you need to use the filters in a controller, you can just load `gt_imagine` service
 
 ``` php
