@@ -41,6 +41,7 @@ class Configuration implements ConfigurationInterface
                         ->children()
                             ->scalarNode('directory')->defaultValue('%kernel.root_dir%/../web/medias/images')->end()
                             ->scalarNode('quality')->defaultValue(75)->end()
+                            ->scalarNode('cdn_url')->defaultValue(null)->end()
                             ->scalarNode('data_loader')->defaultValue('filesystem')->end()
                             ->arrayNode('filters')
                                 ->useAttributeAsKey('name')

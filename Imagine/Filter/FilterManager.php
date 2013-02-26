@@ -15,7 +15,7 @@ use GT\ImagineBundle\Imagine\Filter\Loader\RelativeResizeFilterLoader;
  * and open the template in the editor.
  */
 /**
- * Description of ResizeFilter
+ * Description of FilterManager
  *
  * @author gerardtoko
  */
@@ -53,14 +53,21 @@ class FilterManager
         $filter_set = $filter_sets[$filterParam];
         $directory = $filter_set["directory"];
         $quality = $filter_set["quality"];
-        $file = sprintf("/%s/%s", trim($directory, "/"), trim($imageParam, "/"));
+
+        //data loader
+        $file = $this->dataLoader($directory, $imageParam);
+
+        //imagine service
         $imagine = $this->getImagine($driver);
+
         if (file_exists($file)) {
 
             $file_filter = sprintf("/%s/%s/%s", trim($data_root, "/"), trim($filterParam, "/"), trim($imageParam, "/"));
             if ($force == TRUE || !file_exists($file_filter)) {
 
                 $image = $imagine->open($file);
+
+                //filter loader service
                 $image_filter = $this->apply($image, $filter_set["filters"]);
 
                 $data_filter = sprintf("/%s/%s", trim($data_root, "/"), trim($filterParam, "/"));
@@ -79,6 +86,21 @@ class FilterManager
                 return $value_explode;
             }
         }
+    }
+
+    /**
+     * dataLoader
+     *
+     * @param mixed $directory  Description.
+     * @param mixed $imageParam Description.
+     *
+     * @access public
+     *
+     * @return mixed Value.
+     */
+    protected function dataLoader($directory, $imageParam) {
+        $file = sprintf("/%s/%s", trim($directory, "/"), trim($imageParam, "/"));
+        return $file;
     }
 
     /**

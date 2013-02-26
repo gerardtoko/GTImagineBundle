@@ -1,13 +1,21 @@
 parameters:
-    gt_imagine.imagine.class: GT\ImagineBundle\Service\ImagineService
+    gt_imagine.imagine.service.class: GT\ImagineBundle\Service\ImagineService
+    gt_imagine.templating.helper.class: GT\ImagineBundle\Templating\Helper\ImagineHelper
+    gt_imagine.twig.extension.class: GT\ImagineBundle\Twig\ImagineExtension
 
 services:
     gt_imagine.twig.imagine_extension:
-        class: GT\ImagineBundle\Twig\ImagineExtension
+        class: %gt_imagine.twig.extension.class%
         arguments: ["@service_container"]
         tags:
             - { name: twig.extension }
 
+    gt_imagine.templating.helper:
+        class: %gt_imagine.templating.helper.class%
+        arguments: ["@service_container"]
+        tags:
+            - { name: templating.helper, alias: imagine }
+
     gt_imagine:
-        class: %gt_imagine.imagine.class%
+        class: %gt_imagine.imagine.service.class%
         arguments: ["@service_container"]
